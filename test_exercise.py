@@ -1,10 +1,9 @@
-import numpy as np
+arr = np.array([2, 4, 6, 8])
 
-def normalize_array(arr):
-    min_val = np.min(arr)
-    max_val = np.max(arr)
+normalized = normalize_array(arr)
 
-    if min_val == max_val:
-        return np.zeros_like(arr, dtype=float)
+print(normalized)
+# [0.         0.33333333 0.66666667 1.        ]
 
-    return (arr - min_val) / (max_val - min_val)
+print(arr)
+# [2 4 6 8]  (המערך המקורי לא השתנה)
