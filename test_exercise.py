@@ -1,22 +1,12 @@
-import numpy as np
-import pytest
-from normalized_array import normalized_array  # מייבא את הפונקציה מהקובץ של הסטודנט
+def factors(x):
+  f_list = []
+  for i in range(1, x + 1):
+    if x % i == 0:
+      f_list.append(i)
 
-def test_basic_normalization():
-    data = np.array([10, 20, 30])
-    result = normalized_array(data)
-    expected = np.array([0.0, 0.5, 1.0])
-    np.testing.assert_allclose(result, expected, atol=1e-5)
-
-def test_all_same_values():
-    # מקרה קצה - כל הערכים זהים
-    data = np.array([5, 5, 5])
-    result = normalized_array(data)
-    expected = np.array([0.0, 0.0, 0.0])
-    np.testing.assert_allclose(result, expected, atol=1e-5)
-
-def test_negative_values():
-    data = np.array([-10, 0, 10])
-    result = normalized_array(data)
-    expected = np.array([0.0, 0.5, 1.0])
-    np.testing.assert_allclose(result, expected, atol=1e-5)
+  return f_list
+#check your code
+print(factors(6))
+print(factors(17))
+print(factors(24))
+print(factors(48))
