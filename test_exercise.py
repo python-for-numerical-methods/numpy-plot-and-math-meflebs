@@ -1,12 +1,10 @@
-def factors(x):
-  f_list = []
-  for i in range(1, x + 1):
-    if x % i == 0:
-      f_list.append(i)
+import numpy as np
 
-  return f_list
-#check your code
-print(factors(6))
-print(factors(17))
-print(factors(24))
-print(factors(48))
+def normalize_array(arr):
+    min_val = np.min(arr)
+    max_val = np.max(arr)
+
+    if min_val == max_val:
+        return np.zeros_like(arr, dtype=float)
+
+    return (arr - min_val) / (max_val - min_val)
